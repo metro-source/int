@@ -1,41 +1,3 @@
-//Acciones;
-
-function crear (){
-    return {
-        type:'crear'
-    }
-};
-
-function importar (){
-    return {
-    
-    }
-};
-
-function donwload(){
-    return {
-    
-    }
-}
-
-function guardar(){
-    return {
-    
-    }
-}
-
-function listar (){
-    return {
- 
-    }
-}
-
-function seleccionar () {
-    return {
-    
-    }
-}
-
 
 var spectrumEditor = {
     // Methods
@@ -127,4 +89,26 @@ function handleFile(e) {
   };
   if(rABS) reader.readAsBinaryString(f); else reader.readAsArrayBuffer(f);
 }
+
+$('upload').on('click',function(e){
+  var data = $('#my').jexcel('getData');
+  $.ajax({
+      headers : {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json'
+      },
+      url : api.post,
+      type : 'POST',
+      data : JSON.stringify({nombre:nombre,data:data}),
+      success : function(response, textStatus, jqXhr) {
+         
+      },
+      error : function(jqXHR, textStatus, errorThrown) {
+        
+      },
+      complete : function() {
+          //
+      }
+  });
+})
 document.getElementById('files').addEventListener('change', handleFile, false);

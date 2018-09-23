@@ -158,14 +158,13 @@ $('upload').on('click',function(e){
       type : 'POST',
       data : JSON.stringify({nombre:nombre,data:data}),
       success : function(response, textStatus, jqXhr) {
-          console.log("Venue Successfully Patched!");
+         
       },
       error : function(jqXHR, textStatus, errorThrown) {
-        // log the error to the console
-        console.log("The following error occured: " + textStatus, errorThrown);
+        
       },
       complete : function() {
-          console.log("Venue Patch Ran");
+          //
       }
   });
 })
